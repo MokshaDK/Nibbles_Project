@@ -51,9 +51,16 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
 
     @Override
     public void onSensorChanged(SensorEvent event) {
-        totalSteps = (int) event.values[0];
+        totalSteps = (int) event.values[0];  // Get the step count
         stepCountText.setText("Steps: " + totalSteps);
+
+        // Set progress based on step count
         stepProgressBar.setProgress(totalSteps);
+
+        // Optionally, if you want a limit, make sure steps do not exceed the max
+        if (totalSteps > stepProgressBar.getMax()) {
+            stepProgressBar.setProgress(stepProgressBar.getMax());
+        }
     }
 
     @Override
