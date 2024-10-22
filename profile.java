@@ -1,5 +1,6 @@
 package com.example.nibbles_project;
 
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
@@ -48,6 +49,8 @@ public class profile extends AppCompatActivity {
                     editor.apply();
 
                     Toast.makeText(profile.this, "Profile Updated Successfully", Toast.LENGTH_SHORT).show();
+                    Intent intent = new Intent(profile.this, MainActivity.class);
+                    startActivity(intent);
                 }
             }
         });
