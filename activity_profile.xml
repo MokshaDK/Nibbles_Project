@@ -1,63 +1,123 @@
-<?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".profile">
+    android:padding="16dp">
 
+    <!-- Weight Input -->
     <TextView
-        android:id="@+id/profile_title"
+        android:id="@+id/labelWeight"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="User Profile"
-        android:textSize="24sp"
+        android:text="Weight (kg)"
+        android:textSize="16sp"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginTop="32dp"/>
+        app:layout_constraintStart_toStartOf="parent"/>
 
     <EditText
-        android:id="@+id/profile_name"
+        android:id="@+id/inputWeight"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:hint="Name"
-        app:layout_constraintTop_toBottomOf="@id/profile_title"
+        android:inputType="numberDecimal"
+        android:hint="Enter weight"
+        app:layout_constraintTop_toBottomOf="@id/labelWeight"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        android:layout_margin="16dp"/>
+        android:layout_marginTop="8dp"/>
+
+    <!-- Height Input -->
+    <TextView
+        android:id="@+id/labelHeight"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Height (m)"
+        android:textSize="16sp"
+        app:layout_constraintTop_toBottomOf="@id/inputWeight"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginTop="16dp"/>
 
     <EditText
-        android:id="@+id/profile_email"
+        android:id="@+id/inputHeight"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:hint="Email"
-        android:inputType="textEmailAddress"
-        app:layout_constraintTop_toBottomOf="@id/profile_name"
+        android:inputType="numberDecimal"
+        android:hint="Enter height"
+        app:layout_constraintTop_toBottomOf="@id/labelHeight"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        android:layout_margin="16dp"/>
+        android:layout_marginTop="8dp"/>
+
+    <!-- Age Input -->
+    <TextView
+        android:id="@+id/labelAge"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Age"
+        android:textSize="16sp"
+        app:layout_constraintTop_toBottomOf="@id/inputHeight"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginTop="16dp"/>
 
     <EditText
-        android:id="@+id/profile_age"
+        android:id="@+id/inputAge"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:hint="Age"
         android:inputType="number"
-        app:layout_constraintTop_toBottomOf="@id/profile_email"
+        android:hint="Enter age"
+        app:layout_constraintTop_toBottomOf="@id/labelAge"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        android:layout_margin="16dp"/>
+        android:layout_marginTop="8dp"/>
 
-    <Button
-        android:id="@+id/profile_save_button"
+    <!-- Gender Input -->
+    <TextView
+        android:id="@+id/labelGender"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Gender"
+        android:textSize="16sp"
+        app:layout_constraintTop_toBottomOf="@id/inputAge"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginTop="16dp"/>
+
+    <Spinner
+        android:id="@+id/inputGender"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:text="Save Profile"
-        app:layout_constraintTop_toBottomOf="@id/profile_age"
+        android:entries="@array/gender_array"
+        app:layout_constraintTop_toBottomOf="@id/labelGender"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        android:layout_margin="16dp"/>
+        android:layout_marginTop="8dp"/>
+
+    <!-- Nicotine Exposure -->
+    <TextView
+        android:id="@+id/labelNicotine"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Nicotine Exposure"
+        android:textSize="16sp"
+        app:layout_constraintTop_toBottomOf="@id/inputGender"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginTop="16dp"/>
+
+    <Switch
+        android:id="@+id/inputNicotine"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/labelNicotine"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginTop="8dp"/>
+
+    <!-- Save Button -->
+    <Button
+        android:id="@+id/saveButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Save"
+        app:layout_constraintTop_toBottomOf="@id/inputNicotine"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginTop="24dp"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
