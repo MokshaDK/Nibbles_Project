@@ -20,7 +20,7 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:inputType="numberDecimal"
-        android:hint="Enter weight"
+        android:hint="Enter weight in kilograms"
         app:layout_constraintTop_toBottomOf="@id/labelWeight"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -42,7 +42,7 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:inputType="numberDecimal"
-        android:hint="Enter height"
+        android:hint="Enter height in meters"
         app:layout_constraintTop_toBottomOf="@id/labelHeight"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -91,32 +91,13 @@
         app:layout_constraintEnd_toEndOf="parent"
         android:layout_marginTop="8dp"/>
 
-    <!-- Nicotine Exposure -->
-    <TextView
-        android:id="@+id/labelNicotine"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Nicotine Exposure"
-        android:textSize="16sp"
-        app:layout_constraintTop_toBottomOf="@id/inputGender"
-        app:layout_constraintStart_toStartOf="parent"
-        android:layout_marginTop="16dp"/>
-
-    <Switch
-        android:id="@+id/inputNicotine"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@id/labelNicotine"
-        app:layout_constraintStart_toStartOf="parent"
-        android:layout_marginTop="8dp"/>
-
     <!-- Save Button -->
     <Button
         android:id="@+id/saveButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Save"
-        app:layout_constraintTop_toBottomOf="@id/inputNicotine"
+        app:layout_constraintTop_toBottomOf="@id/inputGender"
         app:layout_constraintStart_toStartOf="parent"
         android:layout_marginTop="24dp"/>
 
