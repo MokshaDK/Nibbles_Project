@@ -19,12 +19,11 @@ public class profile extends AppCompatActivity {
     private Button saveButton;
 
     // Define SharedPreferences name and keys
-    private static final String SHARED_PREFS = "profilePrefs";
+    private static final String SHARED_PREFS = "userPrefs";
     private static final String KEY_WEIGHT = "weight";
     private static final String KEY_HEIGHT = "height";
     private static final String KEY_AGE = "age";
     private static final String KEY_GENDER = "gender";
-    private static final String KEY_NICOTINE = "nicotineExposure";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,7 +35,6 @@ public class profile extends AppCompatActivity {
         inputHeight = findViewById(R.id.inputHeight);
         inputAge = findViewById(R.id.inputAge);
         inputGender = findViewById(R.id.inputGender);
-        inputNicotine = findViewById(R.id.inputNicotine);
         saveButton = findViewById(R.id.saveButton);
 
         // Load saved profile data when the activity is opened
@@ -51,7 +49,6 @@ public class profile extends AppCompatActivity {
         String height = inputHeight.getText().toString();
         String age = inputAge.getText().toString();
         String gender = inputGender.getSelectedItem().toString();
-        boolean nicotineExposure = inputNicotine.isChecked();
 
         // Save data to SharedPreferences
         SharedPreferences sharedPreferences = getSharedPreferences(SHARED_PREFS, Context.MODE_PRIVATE);
@@ -61,7 +58,6 @@ public class profile extends AppCompatActivity {
         editor.putString(KEY_HEIGHT, height);
         editor.putString(KEY_AGE, age);
         editor.putString(KEY_GENDER, gender);
-        editor.putBoolean(KEY_NICOTINE, nicotineExposure);
 
         editor.apply();  // Apply the changes
 
@@ -84,7 +80,6 @@ public class profile extends AppCompatActivity {
         String height = sharedPreferences.getString(KEY_HEIGHT, "");
         String age = sharedPreferences.getString(KEY_AGE, "");
         String gender = sharedPreferences.getString(KEY_GENDER, "");
-        boolean nicotineExposure = sharedPreferences.getBoolean(KEY_NICOTINE, false);
 
         // Set the loaded data to input fields
         inputWeight.setText(weight);
@@ -94,8 +89,6 @@ public class profile extends AppCompatActivity {
         // Set the spinner to the correct gender (you may need a helper function for this)
         setSpinnerToValue(inputGender, gender);
 
-        // Set the nicotine exposure switch
-        inputNicotine.setChecked(nicotineExposure);
     }
 
     // Helper function to set the Spinner's value (gender) based on the saved data
