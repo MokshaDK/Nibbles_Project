@@ -26,7 +26,7 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
     private TextView stepCountText;
     private ProgressBar stepProgressBar;
     private int totalSteps = 0;
-    private static final String SHARED_PREFS = "profilePrefs";
+    private static final String SHARED_PREFS = "userPrefs";
     private static final String KEY_WEIGHT = "weight";
     private static final String KEY_HEIGHT = "height";
 
